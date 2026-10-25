@@ -71,3 +71,17 @@ All **11 controlled fixtures** executed with **100% adherence to forensic constr
 1. **ELA False Positives:** High-contrast geometric edges and dense textures naturally yield higher error levels regardless of tampering. ELA must always be interpreted in conjunction with other signals.
 2. **Lossless / Non-JPEG Media:** ELA is invalid for PNG and WebP formats.
 3. **Absence of Proof:** Cryptographic SHA-256 proves only that the file analyzed matches the uploaded bytes; it does not prove real-world authenticity or creation origin.
+
+---
+
+## 6. Workbench Visual Verification & Screenshots
+
+| Screenshot | Description |
+|---|---|
+| ![Initial Workbench](screenshots/01_initial_workbench.png) | **Initial Workbench:** Local-first interface with normative educational banner and labelled test fixture picker. |
+| ![Evidence Identity](screenshots/02_evidence_identity_and_metadata.png) | **Evidence Identity & Integrity:** SHA-256 pre-processing digest and verified container dimensions. |
+| ![ELA Analysis](screenshots/03_ela_analysis.png) | **Error Level Analysis (ELA):** DCT compression error visualization with interactive parameter adjustment. |
+| ![Channel Histograms](screenshots/04_histograms_and_statistics.png) | **Histograms & Statistics:** 256-bin RGB and perceptual luminance distributions with channel metrics. |
+| ![Metadata Cues](screenshots/05_metadata_inspection_with_cues.png) | **Metadata & Review Cues:** Hardware capture properties and editing software review cues without forgery verdicts. |
+| ![Spliced Composite ELA](screenshots/06_spliced_tampering_ela.png) | **Spliced Composite Analysis:** Differential error level visualization demonstrating compression boundary anomaly. |
+

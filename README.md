@@ -71,6 +71,18 @@ flowchart TD
 
 ---
 
+## 📸 Interface & Forensic Workbench Walkthrough
+
+| Evidence Identity & Cryptographic Integrity | JPEG Error Level Analysis (ELA) |
+|---|---|
+| ![Evidence Identity](reports/screenshots/02_evidence_identity_and_metadata.png) | ![ELA Analysis](reports/screenshots/03_ela_analysis.png) |
+
+| Color Channel Histograms & Statistics | Camera Metadata & Software Review Cues |
+|---|---|
+| ![Histograms](reports/screenshots/04_histograms_and_statistics.png) | ![Metadata Cues](reports/screenshots/05_metadata_inspection_with_cues.png) |
+
+---
+
 ## 🚀 Quickstart & Setup
 
 ### Prerequisites
@@ -80,8 +92,8 @@ flowchart TD
 ### 1. Clone & Set Up Environment
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/AegisImage.git
-cd AegisImage
+git clone https://github.com/Vedant04-tech/ageis-image.git
+cd ageis-image
 
 # Create and activate virtual environment
 python -m venv .venv

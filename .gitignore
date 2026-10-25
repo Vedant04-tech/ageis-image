@@ -36,6 +36,8 @@ reports/*
 !reports/*.pdf
 !reports/*.json
 !reports/*.md
+!reports/screenshots/
+!reports/screenshots/*
 sample_images/*
 !sample_images/README.md
 !sample_images/manifest.json
