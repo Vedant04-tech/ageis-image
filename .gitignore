@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+token.json
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Application artifacts / evidence
+.tmp/
+tmp/
+temp/
+reports/*
+!reports/.gitkeep
+!reports/*.pdf
+!reports/*.json
+!reports/*.md
+sample_images/*
+!sample_images/README.md
+!sample_images/manifest.json
+!sample_images/sample_*
+*.pdf
+!reports/*.pdf
+*.jsonl
+
+# Generated analysis outputs
+ela_*.png
+histogram_*.png
+analysis_*.json
+
+# Documentation and Agent configuration excluded from git per user request
+docs/
+.agents/
+

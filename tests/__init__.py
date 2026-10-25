@@ -1,0 +1,1 @@
+"""AegisImage test suite."""

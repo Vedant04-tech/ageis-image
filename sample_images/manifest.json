@@ -1,0 +1,123 @@
+[
+  {
+    "sample_id": "SMP-01",
+    "filename": "sample_01_untouched.jpg",
+    "format": "JPEG",
+    "category": "untouched_baseline",
+    "operation": "Single high-quality compression (Q=95)",
+    "ground_truth": "Authentic synthetic baseline, no splicing",
+    "expected_intake": "ACCEPTED",
+    "expected_ela": "COMPLETED (uniform compression error pattern)",
+    "expected_metadata": "COMPLETED (no EXIF tags)"
+  },
+  {
+    "sample_id": "SMP-02",
+    "filename": "sample_02_recompressed.jpg",
+    "format": "JPEG",
+    "category": "recompressed",
+    "operation": "Two-generation compression (Q=95 -> Q=70)",
+    "ground_truth": "Resaved lower quality, global error increase",
+    "expected_intake": "ACCEPTED",
+    "expected_ela": "COMPLETED (elevated mean difference across whole frame)",
+    "expected_metadata": "COMPLETED"
+  },
+  {
+    "sample_id": "SMP-03",
+    "filename": "sample_03_tampered_spliced.jpg",
+    "format": "JPEG",
+    "category": "tampered_spliced",
+    "operation": "Pasted high-frequency pattern into Q=75 base and resaved at Q=92",
+    "ground_truth": "Manipulated / spliced composite region",
+    "expected_intake": "ACCEPTED",
+    "expected_ela": "COMPLETED (patch exhibits distinct error level response)",
+    "expected_metadata": "COMPLETED"
+  },
+  {
+    "sample_id": "SMP-04",
+    "filename": "sample_04_with_exif.jpg",
+    "format": "JPEG",
+    "category": "with_metadata",
+    "operation": "Added standard EXIF tags and editing software tag",
+    "ground_truth": "Valid camera tags with Photoshop software signature",
+    "expected_intake": "ACCEPTED",
+    "expected_ela": "COMPLETED",
+    "expected_metadata": "COMPLETED (extracts make, model, software review cue)"
+  },
+  {
+    "sample_id": "SMP-05",
+    "filename": "sample_05_with_gps.jpg",
+    "format": "JPEG",
+    "category": "geotagged",
+    "operation": "Injected GPS coordinates in IFD.GPSInfo",
+    "ground_truth": "Contains geotagging metadata",
+    "expected_intake": "ACCEPTED",
+    "expected_ela": "COMPLETED",
+    "expected_metadata": "COMPLETED (gps_present=True; exact coordinates suppressed)"
+  },
+  {
+    "sample_id": "SMP-06",
+    "filename": "sample_06_metadata_free.jpg",
+    "format": "JPEG",
+    "category": "metadata_free",
+    "operation": "Stripped container without EXIF or APP markers",
+    "ground_truth": "No metadata tags in file container",
+    "expected_intake": "ACCEPTED",
+    "expected_ela": "COMPLETED",
+    "expected_metadata": "COMPLETED (has_exif=False; neutral non-tampering interpretation)"
+  },
+  {
+    "sample_id": "SMP-07",
+    "filename": "sample_07_clean.png",
+    "format": "PNG",
+    "category": "lossless_png",
+    "operation": "Lossless PNG encoding",
+    "ground_truth": "Valid single-frame PNG",
+    "expected_intake": "ACCEPTED",
+    "expected_ela": "NOT_APPLICABLE (non-JPEG format safely rejected from ELA)",
+    "expected_metadata": "COMPLETED"
+  },
+  {
+    "sample_id": "SMP-08",
+    "filename": "sample_08_clean.webp",
+    "format": "WEBP",
+    "category": "lossy_webp",
+    "operation": "WebP still compression",
+    "ground_truth": "Valid single-frame WebP",
+    "expected_intake": "ACCEPTED",
+    "expected_ela": "NOT_APPLICABLE (WebP block transform != JPEG DCT)",
+    "expected_metadata": "COMPLETED"
+  },
+  {
+    "sample_id": "SMP-09",
+    "filename": "sample_09_oversized.bin",
+    "format": "UNKNOWN/OVERSIZED",
+    "category": "oversized_rejection",
+    "operation": "Payload size = 11.0 MiB (> 10 MiB limit)",
+    "ground_truth": "Boundary violation: exceeds maximum byte size",
+    "expected_intake": "REJECTED (FileTooLargeError)",
+    "expected_ela": "N/A",
+    "expected_metadata": "N/A"
+  },
+  {
+    "sample_id": "SMP-10",
+    "filename": "sample_10_corrupt.jpg",
+    "format": "CORRUPT_JPEG",
+    "category": "malformed_rejection",
+    "operation": "Truncated header with invalid entropy bitstream",
+    "ground_truth": "Corrupt image bytes",
+    "expected_intake": "REJECTED (CorruptImageError)",
+    "expected_ela": "N/A",
+    "expected_metadata": "N/A"
+  },
+  {
+    "sample_id": "SMP-11",
+    "filename": "sample_11_animated.gif",
+    "format": "GIF",
+    "category": "animated_unsupported",
+    "operation": "Multi-frame animated sequence in unsupported container",
+    "ground_truth": "Unsupported animated format",
+    "expected_intake": "REJECTED (UnsupportedFormatError or AnimatedImageError)",
+    "expected_ela": "N/A",
+    "expected_metadata": "N/A"
+  }
+]
